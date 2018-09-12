@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { setAddMode } from '../../actions';
+import { setAddMode, fetchList} from '../../actions';
 
 
 const mapStateToProps = state => ({
@@ -7,7 +7,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-
+  fetchList: () => {
+    dispatch(fetchList());
+  },
   setAddMode: (value) => {
     dispatch(setAddMode());
   },

@@ -7,13 +7,16 @@ import Add from '../Add';
 
 
 function MainComponent(props) {
+  props.fetchList();
   function renderShowMode() {
     return (
       <div>
         <h1>My Address Book</h1>
         <Search />
         <List />
-        <Button onClick={props.setAddMode} name="add" />
+        <div>
+          <Button onClick={props.setAddMode} name="add" />
+        </div>
       </div>
     );
   }
@@ -33,6 +36,7 @@ function MainComponent(props) {
       </div>
     );
   }
+
 
   return (
     <div className="row justify-content-center">

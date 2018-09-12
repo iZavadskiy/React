@@ -3,8 +3,8 @@ import { changeInputAddName, changeInputAddEmail, setShowMode, addAddres } from 
 
 
 const mapStateToProps = state => ({
-  inputDataName: state.name,
-  inputDataEmail: state.email,
+  inputDataName: state.input.name,
+  inputDataEmail: state.input.email,
 });
 
 const mapDispatchToProps = dispatch => ({

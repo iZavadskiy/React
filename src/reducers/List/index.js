@@ -1,21 +1,11 @@
-const initState = [
-  {
-    id: 1,
-    name: 'lol',
-    email: 'kek',
-  },
-  {
-    id: 2,
-    name: 'lol2',
-    email: 'kek2',
-  },
-
-];
+const initState = {};
 
 const list = (state = initState, { type, payload }) => {
   switch (type) {
     case 'ADD':
       return state;
+    case 'FETCH_LIST':
+      return payload;
     default:
       return state;
   }

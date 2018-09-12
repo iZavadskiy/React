@@ -11,7 +11,6 @@ function identity(a) {
   return a;
 }
 
-
 // local actions
 
 export const changeInputSearch = createAction('CHANGE_INPUT_SEARCH', identity);
@@ -25,7 +24,7 @@ export const setEditMode = createAction('SET_EDIT_MODE', identity);
 // remote actions
 
 export const addAddres = newAddres => async (dispatch) => {
-  console.log(newAddres);
+    console.log(newAddres);
   listRef.push().set(newAddres);
 };
 

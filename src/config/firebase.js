@@ -5,8 +5,9 @@ import { FirebaseConfig } from './keys';
 firebase.initializeApp(FirebaseConfig);
 
 const databaseRef = firebase.database().ref();
-firebase.database().ref('list').set({
-  name: '1212',
-  email: 'asdas',
+
+export const listRef = databaseRef.child('list');
+
+listRef.on('value', (snapshot) => {
+  console.log(snapshot.val());
 });
- export const listRef = databaseRef.child('list');

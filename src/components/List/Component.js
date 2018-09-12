@@ -4,13 +4,16 @@ import Item from './item';
 
 function List(props) {
   return (
-    props.items.map(item => (
-      <Item
-        key={item.id}
-        name={item.name}
-        email={item.email}
-      />
-    ))
+    Object.keys(props.items).length !== 0 ? (
+      Object.keys(props.items).map(key => (
+        <Item
+          key={props.items[key].id}
+          name={props.items[key].name}
+          email={props.items[key].email}
+          uid={key}
+        />
+      )))
+      : 'There is no items yet.'
   );
 }
 

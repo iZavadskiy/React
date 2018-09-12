@@ -1,7 +1,7 @@
 const initState = {
-  search: '',
-  name: '',
-  email: ''
+  search: '1',
+  name: '1',
+  email: '1',
 };
 
 const input = (state = initState, { type, payload }) => {
@@ -10,9 +10,9 @@ const input = (state = initState, { type, payload }) => {
       return Object.assign(state, { search: payload });
     case 'CHANGE_INPUT_ADD_NAME':
       console.log(state);
-      return Object.assign(state, { name: payload });
+      return payload;
     case 'CHANGE_INPUT_ADD_EMAIL':
-      return Object.assign(state, { email: payload });
+      return payload;
     default:
       return state;
   }

@@ -5,10 +5,14 @@ import Button from '../Button';
 
 function Add(props) {
   function saveAddedData() {
-    props.addAddres('asdasd');
-    props.setShowMode();
+      console.log(props);
+    // props.addAddres({
+    //   name: props.inputDataName,
+    //   email: props.inputDataEmail,
+    // });
+    // props.setShowMode();
   }
-
+    console.log(props);
   return (
     <div>
       <h1> <a href="" onClick={props.setShowMode}>My Address Book </a>/ New contact</h1>
