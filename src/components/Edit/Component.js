@@ -24,7 +24,7 @@ class Edit extends React.Component {
     const nameValid = isNamelValid(this.props.inputDataName);
 
     if (emailValid && nameValid) {
-      this.props.editAddres({
+      this.props.editAddress({
         name: this.props.inputDataName === '' ? this.props.currentName : this.props.inputDataName,
         email: this.props.inputDataEmail === '' ? this.props.currentEmail : this.props.inputDataEmail,
       }, this.props.id);
@@ -75,7 +75,7 @@ Edit.propTypes = {
   clearAllinput: PropTypes.func.isRequired,
   id: PropTypes.number.isRequired,
   setShowMode: PropTypes.func.isRequired,
-  editAddres: PropTypes.func.isRequired,
+  editAddress: PropTypes.func.isRequired,
   onChangeName: PropTypes.func.isRequired,
   onChangeEmail: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,

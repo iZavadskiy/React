@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { changeInputAddName, changeInputAddEmail, setShowMode, removeFromList, clearAllinput, editAddres } from '../../actions';
+import { changeInputAddName, changeInputAddEmail, setShowMode, removeFromList, clearAllinput, editAddress } from '../../actions';
 
 function getCurrentItemById(items, id) {
   let find = '';
@@ -45,8 +45,8 @@ const mapDispatchToProps = dispatch => ({
   clearAllinput: () => {
     dispatch(clearAllinput());
   },
-  editAddres: (value, id) => {
-    dispatch(editAddres(value, id));
+  editAddress: (value, id) => {
+    dispatch(editAddress(value, id));
   },
 });
 

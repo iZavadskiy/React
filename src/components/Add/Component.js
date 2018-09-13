@@ -24,7 +24,7 @@ class Add extends React.Component {
     const nameValid = isNamelValid(this.props.inputDataName);
 
     if (emailValid && nameValid) {
-      this.props.addAddres({
+      this.props.addAddress({
         name: this.props.inputDataName,
         email: this.props.inputDataEmail,
       });
@@ -65,7 +65,7 @@ Add.propTypes = {
   inputDataName: PropTypes.string.isRequired,
   clearAllinput: PropTypes.func.isRequired,
   setShowMode: PropTypes.func.isRequired,
-  addAddres: PropTypes.func.isRequired,
+  addAddress: PropTypes.func.isRequired,
   onChangeName: PropTypes.func.isRequired,
   onChangeEmail: PropTypes.func.isRequired,
 };

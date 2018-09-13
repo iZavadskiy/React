@@ -24,12 +24,12 @@ export const setEditMode = createAction('SET_EDIT_MODE', identity);
 
 // remote actions
 
-export const addAddres = newAddres => async (dispatch) => {
-  listRef.push().set(newAddres);
+export const addAddress = newAddress => async (dispatch) => {
+  listRef.push().set(newAddress);
 };
 
-export const editAddres = (newAddres, id) => async (dispatch) => {
-  listRef.child(id).update(newAddres);
+export const editAddress = (newAddress, id) => async (dispatch) => {
+  listRef.child(id).update(newAddress);
 };
 
 export const removeFromList = removeId => async (dispatch) => {
