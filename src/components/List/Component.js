@@ -14,7 +14,7 @@ function List(props) {
           onDelete={props.removeFromList}
           onEdit={props.setEditMode}
         />
-      )) : "There is no records yet"
+      )) : "There is no records"
   );
 }
 

@@ -7,22 +7,27 @@ import Add from '../Add';
 import Edit from '../Edit';
 
 
-function MainComponent(props) {
-  props.fetchList();
-  function renderShowMode() {
+class MainComponent extends React.Component {
+  // props.fetchList();
+
+  constructor(){
+    super();
+  }
+
+  renderShowMode() {
     return (
       <div>
         <h1>My Address Book</h1>
         <Search />
         <List />
         <div>
-          <Button onClick={props.setAddMode} name="add" type="primary"/>
+          <Button onClick={this.props.setAddMode} name="add" type="primary"/>
         </div>
       </div>
     );
   }
 
-  function renderAddMode() {
+   renderAddMode() {
     return (
       <div>
         <Add />
@@ -30,7 +35,7 @@ function MainComponent(props) {
     );
   }
 
-  function renderEditMode() {
+   renderEditMode() {
     return (
       <div>
         <Edit />
@@ -38,16 +43,21 @@ function MainComponent(props) {
     );
   }
 
+  componentWillMount(){
+    this.props.fetchList();
+  }
 
-  return (
-    <div className="row justify-content-center">
-      <div className="col col-md-4">
-        {props.appMode === 'show' ? renderShowMode() : ''}
-        {props.appMode === 'add' ? renderAddMode() : ''}
-        {props.appMode === 'edit' ? renderEditMode() : ''}
+  render() {
+    return (
+      <div className="row justify-content-center">
+        <div className="col col-md-4">
+          {this.props.appMode === 'show' ? this.renderShowMode() : ''}
+          {this.props.appMode === 'add' ? this.renderAddMode() : ''}
+          {this.props.appMode === 'edit' ? this.renderEditMode() : ''}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 MainComponent.propTypes = {
 

@@ -4,7 +4,7 @@ import TextField from '../TextField';
 
 function Search(props) {
   return (
-    <TextField onChange={props.onChange} value={props.inputData} placeholder="Search" />
+    <TextField onChange={props.onChange} value={props.inputData} placeholder="Search" valid={true}/>
   );
 }
 Search.propTypes = {
