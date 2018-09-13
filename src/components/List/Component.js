@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Item from './item';
 
 function List(props) {
@@ -14,12 +14,12 @@ function List(props) {
           onDelete={props.removeFromList}
           onEdit={props.setEditMode}
         />
-      )) : "There is no records"
+      )) : 'There is no records'
   );
 }
 
 List.propTypes = {
-
+  items: PropTypes.objectOf().isRequired,
 };
 
 export default List;

@@ -1,13 +1,11 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import TextField from '../TextField';
 import Button from '../Button';
-import { isEmailValid, isNamelValid } from '../../helpers/validators'
+import { isEmailValid, isNamelValid } from '../../helpers/validators';
 
 class Edit extends React.Component {
-
-
-  constructor(){
+  constructor() {
     super();
 
     this.state = {
@@ -25,29 +23,29 @@ class Edit extends React.Component {
     const emailValid = isEmailValid(this.props.inputDataEmail);
     const nameValid = isNamelValid(this.props.inputDataName);
 
-    if( emailValid && nameValid){
+    if (emailValid && nameValid) {
       this.props.editAddres({
         name: this.props.inputDataName === '' ? this.props.currentName : this.props.inputDataName,
         email: this.props.inputDataEmail === '' ? this.props.currentEmail : this.props.inputDataEmail,
       }, this.props.id);
       this.props.clearAllinput();
       this.props.setShowMode();
-      }else{
-        this.setState({
-          nameError: !nameValid,
-          emailError: !emailValid,
-        })
+    } else {
+      this.setState({
+        nameError: !nameValid,
+        emailError: !emailValid,
+      });
     }
   }
 
-  returnBack(){
+  returnBack() {
     this.props.clearAllinput();
     this.props.setShowMode();
   }
 
-  hendleDelete(){
+  hendleDelete() {
     this.props.onDelete(this.props.id);
-    this.returnBack()
+    this.returnBack();
   }
 
   render() {
@@ -58,11 +56,11 @@ class Edit extends React.Component {
         <TextField onChange={this.props.onChangeEmail} value={this.props.inputDataEmail} placeholder="Email" valid={!this.state.emailError} />
         <div className="row">
           <div className="col-md">
-            <Button onClick={this.hendleDelete} name="Delete" type="danger"/>
+            <Button onClick={this.hendleDelete} name="Delete" type="danger" />
           </div>
           <div className="col-md text-right">
-            <Button onClick={this.returnBack} name="Cancel" type="secondary"/>
-            <Button onClick={this.saveAddedData} name="Save" type="success"/>
+            <Button onClick={this.returnBack} name="Cancel" type="secondary" />
+            <Button onClick={this.saveAddedData} name="Save" type="success" />
           </div>
         </div>
       </div>
@@ -70,7 +68,17 @@ class Edit extends React.Component {
   }
 }
 Edit.propTypes = {
-
+  inputDataEmail: PropTypes.string.isRequired,
+  currentName: PropTypes.string.isRequired,
+  currentEmail: PropTypes.string.isRequired,
+  inputDataName: PropTypes.string.isRequired,
+  clearAllinput: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired,
+  setShowMode: PropTypes.func.isRequired,
+  editAddres: PropTypes.func.isRequired,
+  onChangeName: PropTypes.func.isRequired,
+  onChangeEmail: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
 

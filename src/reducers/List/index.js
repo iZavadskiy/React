@@ -1,13 +1,13 @@
 const initState = [];
 
-function transformToArray(dataFromFirebase){
+function transformToArray(dataFromFirebase) {
   const array = [];
-  if( dataFromFirebase !== null) {
-    Object.keys(dataFromFirebase).map(key => {
+  if (dataFromFirebase !== null) {
+    Object.keys(dataFromFirebase).map((key) => {
       array.push({
-        'id': key,
-        'name': dataFromFirebase[key].name,
-        'email': dataFromFirebase[key].email,
+        id: key,
+        name: dataFromFirebase[key].name,
+        email: dataFromFirebase[key].email,
       });
     });
   }

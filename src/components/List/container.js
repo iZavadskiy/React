@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
- import { removeFromList, setEditMode } from '../../actions';
+import { removeFromList, setEditMode } from '../../actions';
 
-function serchInList(item, query){
-  return (item.name.indexOf(query) !== -1)
+function serchInList(item, query) {
+  return (item.name.indexOf(query) !== -1);
 }
 
 const mapStateToProps = state => ({

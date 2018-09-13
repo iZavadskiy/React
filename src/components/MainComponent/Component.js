@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import List from '../List';
 import Search from '../Search';
 import Button from '../Button';
@@ -10,8 +10,8 @@ import Edit from '../Edit';
 class MainComponent extends React.Component {
   // props.fetchList();
 
-  constructor(){
-    super();
+  componentWillMount() {
+    this.props.fetchList();
   }
 
   renderShowMode() {
@@ -21,13 +21,13 @@ class MainComponent extends React.Component {
         <Search />
         <List />
         <div>
-          <Button onClick={this.props.setAddMode} name="add" type="primary"/>
+          <Button onClick={this.props.setAddMode} name="add" type="primary" />
         </div>
       </div>
     );
   }
 
-   renderAddMode() {
+  renderAddMode() {
     return (
       <div>
         <Add />
@@ -35,7 +35,7 @@ class MainComponent extends React.Component {
     );
   }
 
-   renderEditMode() {
+  renderEditMode() {
     return (
       <div>
         <Edit />
@@ -43,9 +43,6 @@ class MainComponent extends React.Component {
     );
   }
 
-  componentWillMount(){
-    this.props.fetchList();
-  }
 
   render() {
     return (
@@ -60,6 +57,9 @@ class MainComponent extends React.Component {
   }
 }
 MainComponent.propTypes = {
+  fetchList: PropTypes.func.isRequired,
+  setAddMode: PropTypes.func.isRequired,
+  appMode: PropTypes.string.isRequired,
 
 };
 

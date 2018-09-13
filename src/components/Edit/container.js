@@ -1,12 +1,11 @@
 import { connect } from 'react-redux';
 import { changeInputAddName, changeInputAddEmail, setShowMode, removeFromList, clearAllinput, editAddres } from '../../actions';
 
-function getCurrentItemById(items, id){
-
+function getCurrentItemById(items, id) {
   let find = '';
 
-  items.map(item=>{
-    if( item.id === id ){
+  items.map((item) => {
+    if (item.id === id) {
       find = item;
     }
   });
@@ -14,8 +13,8 @@ function getCurrentItemById(items, id){
   return find;
 }
 
-function setValue(inputValue, currentValue){
-  if(inputValue === ''){
+function setValue(inputValue, currentValue) {
+  if (inputValue === '') {
     return currentValue;
   }
   return inputValue;

@@ -1,11 +1,11 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 function Button(props) {
   const click = () => {
     props.onClick();
   };
-  const btnClasses="myButton btn btn-"+props.type;
+  const btnClasses = `myButton btn btn-${props.type}`;
   return (
     <button
       className={btnClasses}
@@ -17,7 +17,9 @@ function Button(props) {
 }
 
 Button.propTypes = {
-
+  onClick: PropTypes.func.isRequired,
+  type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 
