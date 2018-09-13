@@ -8,7 +8,7 @@ import App from './App';
 import mainReducer from './reducers';
 import registerServiceWorker from './registerServiceWorker';
 
-const store = createStore(mainReducer, {}, applyMiddleware(reduxThunk));
+const store = createStore(mainReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(reduxThunk));
 
 
 ReactDOM.render(

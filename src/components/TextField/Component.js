@@ -8,7 +8,7 @@ function TextField(props) {
 
 
   return (
-    <input className="form-control" type="text" onChange={handleInput} value={props.value} placeholder={props.placeholder} />
+    <input className="form-control mySpaces" type="text" onChange={handleInput} value={props.value} placeholder={props.placeholder} />
   );
 }
 TextField.propTypes = {

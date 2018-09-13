@@ -5,21 +5,30 @@ import Button from '../Button';
 
 function Add(props) {
   function saveAddedData() {
-      console.log(props);
-    // props.addAddres({
-    //   name: props.inputDataName,
-    //   email: props.inputDataEmail,
-    // });
-    // props.setShowMode();
+    props.addAddres({
+      name: props.inputDataName,
+      email: props.inputDataEmail,
+    });
+    props.clearAllinput();
+    props.setShowMode();
   }
-    console.log(props);
+
+  function returnBack(){
+    props.clearAllinput();
+    props.setShowMode();
+  }
+
   return (
     <div>
-      <h1> <a href="" onClick={props.setShowMode}>My Address Book </a>/ New contact</h1>
+      <h1> <span className="myUrl" onClick={returnBack}>My Address Book </span>/ New contact</h1>
       <TextField onChange={props.onChangeName} value={props.inputDataName} placeholder="Name" />
       <TextField onChange={props.onChangeEmail} value={props.inputDataEmail} placeholder="Email" />
-      <Button onClick={props.setShowMode} name="Cancel" />
-      <Button onClick={saveAddedData} name="Add" />
+      <div className="row">
+        <div className="col-md text-right">
+      <Button onClick={returnBack} name="Cancel" type="secondary"/>
+      <Button onClick={saveAddedData} name="Add" type="success"/>
+    </div>
+    </div>
     </div>
   );
 }

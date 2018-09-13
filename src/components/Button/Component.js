@@ -5,9 +5,10 @@ function Button(props) {
   const click = () => {
     props.onClick();
   };
+  const btnClasses="myButton btn btn-"+props.type;
   return (
     <button
-      className="btn btn-primary"
+      className={btnClasses}
       onClick={click}
     >
       { props.name }

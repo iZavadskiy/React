@@ -5,6 +5,7 @@
   "dependencies": {
     "firebase": "^5.4.2",
     "react": "^16.5.0",
+    "immutable": "^3.8.2",
     "react-dom": "^16.5.0",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.5",
@@ -18,7 +19,6 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "eslint": "^5.5.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",

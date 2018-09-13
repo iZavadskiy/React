@@ -1,18 +1,26 @@
-const initState = {
-  search: '1',
-  name: '1',
-  email: '1',
-};
+import { Map } from 'immutable';
+
+const initState = Map({
+  search: '',
+  name: '',
+  email: '',
+});
 
 const input = (state = initState, { type, payload }) => {
   switch (type) {
     case 'CHANGE_INPUT_SEARCH':
-      return Object.assign(state, { search: payload });
+      return state.update('search', () => payload);
     case 'CHANGE_INPUT_ADD_NAME':
-      console.log(state);
-      return payload;
+      return state.update('name', () => payload);
     case 'CHANGE_INPUT_ADD_EMAIL':
-      return payload;
+      return state.update('email', () => payload);
+    case 'CLEAR_ALL_INPUT':
+      const clear = Map({
+        search: '',
+        name: '',
+        email: '',
+      });
+      return state.update(() => clear);
     default:
       return state;
   }

@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import { changeInputAddName, changeInputAddEmail, setShowMode, addAddres } from '../../actions';
+import { changeInputAddName, changeInputAddEmail, setShowMode, addAddres, clearAllinput } from '../../actions';
 
 
 const mapStateToProps = state => ({
-  inputDataName: state.input.name,
-  inputDataEmail: state.input.email,
+  inputDataName: state.input.get('name'),
+  inputDataEmail: state.input.get('email'),
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -17,6 +17,9 @@ const mapDispatchToProps = dispatch => ({
   },
   setShowMode: () => {
     dispatch(setShowMode());
+  },
+  clearAllinput: () => {
+    dispatch(clearAllinput());
   },
   addAddres: (valuse) => {
     dispatch(addAddres(valuse));

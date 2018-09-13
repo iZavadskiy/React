@@ -4,6 +4,7 @@ import List from '../List';
 import Search from '../Search';
 import Button from '../Button';
 import Add from '../Add';
+import Edit from '../Edit';
 
 
 function MainComponent(props) {
@@ -15,7 +16,7 @@ function MainComponent(props) {
         <Search />
         <List />
         <div>
-          <Button onClick={props.setAddMode} name="add" />
+          <Button onClick={props.setAddMode} name="add" type="primary"/>
         </div>
       </div>
     );
@@ -32,7 +33,7 @@ function MainComponent(props) {
   function renderEditMode() {
     return (
       <div>
-       edit
+        <Edit />
       </div>
     );
   }

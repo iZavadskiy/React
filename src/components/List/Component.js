@@ -4,16 +4,17 @@ import Item from './item';
 
 function List(props) {
   return (
-    Object.keys(props.items).length !== 0 ? (
-      Object.keys(props.items).map(key => (
+    props.items.length !== 0 ?
+      props.items.map(item => (
         <Item
-          key={props.items[key].id}
-          name={props.items[key].name}
-          email={props.items[key].email}
-          uid={key}
+          key={item.id}
+          id={item.id}
+          name={item.name}
+          email={item.email}
+          onDelete={props.removeFromList}
+          onEdit={props.setEditMode}
         />
-      )))
-      : 'There is no items yet.'
+      )) : "There is no records yet"
   );
 }
 

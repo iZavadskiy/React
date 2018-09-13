@@ -3,14 +3,14 @@ import { setAddMode, fetchList} from '../../actions';
 
 
 const mapStateToProps = state => ({
-  appMode: state.appMode,
+  appMode: state.appMode.get('appMode'),
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchList: () => {
     dispatch(fetchList());
   },
-  setAddMode: (value) => {
+  setAddMode: () => {
     dispatch(setAddMode());
   },
 });

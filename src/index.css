@@ -3,3 +3,20 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.mySpaces{
+  margin-bottom: 10px;
+}
+
+.myButton {
+  margin-right: 5px
+}
+
+.myUrl{
+  color: dodgerblue;
+  cursor: pointer;
+}
+
+.rightSide{
+  alignment: right;
+}
